@@ -1,877 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <title>Malaiyarasan M | AI & Data Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio of Malaiyarasan M - AI & Data Engineer specializing in analytics, machine learning and computer vision." />
   <style>
-    :root {
-      --bg: #ffffff;
-      --bg-alt: #f6f6f7;
-      --text: #111111;
-      --muted: #6b6b6b;
-      --accent: #2563eb;
-      --accent-soft: #eef3ff;
-      --border: #e1e1e3;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
-      --radius-xl: 18px;
-      --radius-lg: 14px;
-      --radius-pill: 999px;
-      --max-width: 1040px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    main {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 24px 18px 48px;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.86);
-      border-bottom: 1px solid rgba(226,232,240,0.8);
-    }
-
-    .nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 10px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-    }
-
-    .nav-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .nav-name {
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 14px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      padding: 6px 10px;
-      border-radius: 999px;
-      transition: background 0.15s ease, color 0.15s ease;
-    }
-
-    .nav-links a:hover {
-      background: #e5edff;
-      color: var(--accent);
-    }
-
-    .nav-cta {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .btn-pill {
-      border-radius: var(--radius-pill);
-      padding: 7px 14px;
-      font-size: 12px;
-      border: 1px solid var(--border);
-      background: #f9fafb;
-      color: #111827;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
-    }
-
-    .btn-pill:hover {
-      background: #eef2ff;
-      border-color: #d4ddff;
-      transform: translateY(-1px);
-    }
-
-    .btn-pill-primary {
-      background: #111827;
-      color: #f9fafb;
-      border-color: #111827;
-    }
-
-    .btn-pill-primary:hover {
-      background: #020617;
-      border-color: #020617;
-    }
-
-    /* Hero */
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
-      gap: 28px;
-      margin-top: 28px;
-      margin-bottom: 24px;
-    }
-
-    .hero-main {
-      background: var(--bg-alt);
-      border-radius: var(--radius-xl);
-      padding: 22px 22px 20px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: var(--accent-soft);
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .hero-title {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 8px;
-    }
-
-    .hero-sub {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 16px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .hero-meta span {
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      background: #f9fafb;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-
-    .hero-note {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .hero-side {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      background: #ffffff;
-      padding: 16px 16px 14px;
-    }
-
-    .card-title {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .card-body {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 10px;
-    }
-
-    .tag {
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #f9fafb;
-      color: #4b5563;
-    }
-
-    /* Sections */
-
-    section {
-      margin-top: 32px;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-
-    .section-title {
-      font-size: 17px;
-      font-weight: 600;
-      letter-spacing: 0;
-    }
-
-    .section-sub {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
-      gap: 20px;
-    }
-
-    .about-text {
-      font-size: 13px;
-      color: #374151;
-    }
-
-    .about-text p + p {
-      margin-top: 8px;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px;
-    }
-
-    .skill-group-title {
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .skill-list {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* Projects */
-
-    .project-group {
-      margin-top: 10px;
-    }
-
-    .project-group-title {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .project-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 12px;
-    }
-
-    .project-card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 12px 12px 11px;
-      background: #ffffff;
-    }
-
-    .project-name {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .project-meta {
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .project-desc {
-      font-size: 12px;
-      color: #4b5563;
-      margin-bottom: 6px;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-
-    /* Experience */
-
-    .timeline {
-      display: grid;
-      gap: 10px;
-      font-size: 12px;
-    }
-
-    .exp-item {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 10px 11px 9px;
-      background: #ffffff;
-    }
-
-    .exp-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-
-    .exp-role {
-      font-weight: 600;
-      font-size: 12px;
-    }
-
-    .exp-company {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .exp-period {
-      font-size: 11px;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .exp-desc {
-      font-size: 12px;
-      color: #4b5563;
-    }
-
-    .exp-bullets {
-      margin-top: 5px;
-      padding-left: 16px;
-    }
-
-    .exp-bullets li {
-      margin-bottom: 2px;
-    }
-
-    /* Contact */
-
-    .contact-card {
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border);
-      background: #f9fafb;
-      padding: 18px 18px 16px;
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
-      gap: 16px;
-      align-items: center;
-    }
-
-    .contact-main {
-      font-size: 13px;
-      color: #374151;
-    }
-
-    .contact-main p + p {
-      margin-top: 6px;
-    }
-
-    .contact-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .contact-link {
-      font-size: 12px;
-      padding: 7px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border);
-      background: #ffffff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.15s ease, transform 0.1s ease;
-    }
-
-    .contact-link span {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .contact-link strong {
-      font-size: 12px;
-    }
-
-    .contact-link:hover {
-      background: #eef2ff;
-      transform: translateY(-1px);
-    }
-
-    footer {
-      max-width: var(--max-width);
-      margin: 20px auto 0;
-      padding: 0 18px 30px;
-      font-size: 11px;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-      border-top: 1px solid var(--border);
-      padding-top: 14px;
-    }
-
-    @media (max-width: 820px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .contact-card {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .two-col {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .nav-links {
-        display: none;
-      }
-      .hero-main {
-        padding: 18px 16px 16px;
-      }
-    }
+    /* --- minimal excerpt of your theme (keeps look consistent) --- */
+    :root{--bg:#fff;--muted:#6b6b6b;--accent:#2563eb;--card:#fff;--border:#e1e1e3}
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:#111;line-height:1.6;padding:18px}
+    .container{max-width:1040px;margin:0 auto}
+    header{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+    .nav-left{display:flex;align-items:center;gap:12px}
+    .btn-pill{padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:#f9fafb;text-decoration:none;color:#111}
+    .hero{display:flex;gap:24px;align-items:flex-start;margin:18px 0}
+    .hero-main{flex:2;padding:18px;border-radius:14px;border:1px solid var(--border);background:#f6f6f7}
+    .hero-side{flex:1;display:flex;flex-direction:column;gap:12px}
+    h1{font-size:28px;margin:8px 0}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{padding:6px 10px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:12px}
+    section{margin-top:26px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .project-card{padding:12px;border-radius:12px;border:1px solid var(--border);background:var(--card)}
+    .project-name{font-weight:700;font-size:14px;margin-bottom:6px}
+    .project-desc{font-size:13px;color:#374151;margin-bottom:8px}
+    .project-meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+    .card-actions{display:flex;gap:8px;flex-wrap:wrap}
+    footer{margin-top:26px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);padding-top:12px;display:flex;justify-content:space-between}
+    @media(max-width:820px){.hero{flex-direction:column}}
   </style>
 </head>
 <body>
-  <header>
-    <nav class="nav">
+  <div class="container">
+    <header>
       <div class="nav-left">
-        <div class="nav-dot"></div>
-        <div class="nav-name">MALAIYARASAN • AI & DATA ENGINEER</div>
+        <div style="width:10px;height:10px;border-radius:50%;background:var(--accent)"></div>
+        <div style="font-weight:600">MALAIYARASAN • AI & DATA ENGINEER</div>
       </div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+      <div style="display:flex;gap:8px;align-items:center">
+        <a class="btn-pill" href="mailto:msmalai1007@gmail.com">Email</a>
+        <a class="btn-pill" href="https://github.com/Malaiyarasan" target="_blank">GitHub</a>
       </div>
-      <div class="nav-cta">
-        <a href="mailto:msmalai1007@gmail.com" class="btn-pill">
-          Email
-        </a>
-        <a href="https://github.com/Malaiyarasan" class="btn-pill btn-pill-primary" target="_blank">
-          GitHub Profile
-        </a>
-      </div>
-    </nav>
-  </header>
+    </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="hero-main">
-        <div class="hero-tag">
-          <span>Available for AI & Data roles</span>
-        </div>
-        <h1 class="hero-title">AI & Data Engineer crafting intelligent, data-driven systems.</h1>
-        <p class="hero-sub">
-          I design and build end-to-end solutions across analytics, machine learning, and computer vision —
-          from cleaning raw data to deploying models and dashboards that support real business decisions.
-        </p>
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-main">
+          <div style="display:inline-flex;padding:6px 10px;border-radius:999px;background:#eef3ff;color:var(--accent);font-size:12px;margin-bottom:10px">Available — Open to Remote & Relocate</div>
+          <h1>AI & Data Engineer — building real-world ML systems & computer vision apps</h1>
+          <p style="color:var(--muted)">I build end-to-end ML systems: data pipelines, models, APIs and polished demos. Open to mid/senior roles across India, Japan, Canada and Germany.</p>
 
-        <div class="hero-meta">
-          <span>📍 Chennai, India</span>
-          <span>🌍 Open to India, Japan, Germany, Canada</span>
-          <span>PG Diploma in Data Science</span>
-        </div>
-
-        <div class="hero-actions">
-          <a href="#projects" class="btn-pill btn-pill-primary">View Projects</a>
-          <a href="#experience" class="btn-pill">View Experience</a>
-        </div>
-        <p class="hero-note">
-          Focus areas: Analytics • Machine Learning • Computer Vision • Deployment
-        </p>
-      </div>
-
-      <div class="hero-side">
-        <div class="card">
-          <div class="card-title">Snapshot</div>
-          <div class="card-body">
-            <p>AI & Data Engineer with experience in:</p>
-            <ul style="margin-top:6px;padding-left:18px;">
-              <li>Data analytics & BI dashboards</li>
-              <li>ML models for prediction & classification</li>
-              <li>Computer vision for real-time perception</li>
-            </ul>
-            <div class="card-tags">
-              <span class="tag">Python</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Power BI</span>
-              <span class="tag">TensorFlow</span>
-              <span class="tag">Scikit-learn</span>
-              <span class="tag">OpenCV</span>
-            </div>
+          <div class="tags" style="margin-top:10px">
+            <span class="tag">Python</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Deployment</span>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-title">Currently</div>
-          <div class="card-body">
-            Exploring roles where I can own the full pipeline:
-            from multi-source data to production-ready ML models and clear visual insights.
+        <aside class="hero-side">
+          <div style="padding:12px;border-radius:12px;border:1px solid var(--border);background:#fff">
+            <div style="font-weight:700;margin-bottom:6px">Snapshot</div>
+            <div style="font-size:13px;color:#374151">
+              AI & Data Engineer with experience in analytics, ML models, and CV — deployable demos and reproducible notebooks.
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ABOUT & SKILLS -->
-    <section id="about">
-      <div class="section-header">
-        <h2 class="section-title">About</h2>
-        <p class="section-sub">Who I am and how I think about data & AI.</p>
-      </div>
+          <div style="padding:12px;border-radius:12px;border:1px solid var(--border);background:#fff">
+            <div style="font-weight:700;margin-bottom:6px">Contact</div>
+            <div style="font-size:13px;color:var(--muted)">msmalai1007@gmail.com</div>
+            <div style="margin-top:8px"><a class="btn-pill" href="https://github.com/Malaiyarasan" target="_blank">View GitHub</a></div>
+          </div>
+        </aside>
+      </section>
 
-      <div class="two-col">
-        <div class="about-text">
-          <p>
-            I’m <strong>Malaiyarasan</strong>, an AI & Data Engineer with a postgraduate specialization in
-            Data Science and hands-on experience in analytics, machine learning, and computer vision.
-          </p>
-          <p>
-            My work spans cleaning and transforming raw datasets, building ML models, and delivering
-            insights through dashboards and APIs. I like roles where I can work close to both
-            <strong>data & business</strong> — understanding the problem, modeling it, and shipping
-            something that people actually use.
-          </p>
-          <p>
-            I’m especially interested in opportunities where data from the real world
-            (sensors, customers, operations) is turned into decisions using analytics and AI.
-          </p>
+      <!-- PROJECTS -->
+      <section id="projects">
+        <div style="display:flex;justify-content:space-between;align-items:end">
+          <div><h2 style="margin:0">Projects — Selected Work</h2><div style="color:var(--muted);font-size:13px">Live demos, Colab notebooks & code</div></div>
         </div>
 
-        <div id="skills">
-          <div class="section-header" style="margin-top:0;">
-            <h2 class="section-title" style="font-size:15px;">Skills</h2>
-            <p class="section-sub">Tools and concepts I work with regularly.</p>
-          </div>
-          <div class="skills-grid">
-            <div class="card">
-              <div class="skill-group-title">Data Analytics & BI</div>
-              <div class="skill-list">
-                Power BI, Tableau, Excel (Pivot, Power Query), KPI tracking, churn analysis, forecasting
-              </div>
-            </div>
-            <div class="card">
-              <div class="skill-group-title">Programming & Data</div>
-              <div class="skill-list">
-                Python (Pandas, NumPy, Scikit-Learn), SQL, MongoDB, data wrangling, feature engineering
-              </div>
-            </div>
-            <div class="card">
-              <div class="skill-group-title">Machine Learning</div>
-              <div class="skill-list">
-                Regression, classification, clustering, Random Forest, XGBoost, model evaluation & tuning
-              </div>
-            </div>
-            <div class="card">
-              <div class="skill-group-title">Deep Learning & CV</div>
-              <div class="skill-list">
-                TensorFlow, Keras, CNN, RNN, LSTM, LipNet, OpenCV, real-time inference
-              </div>
-            </div>
-            <div class="card">
-              <div class="skill-group-title">Deployment</div>
-              <div class="skill-list">
-                FastAPI, Flask, basic Docker, Git & GitHub, API-based model serving
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <div class="projects" style="margin-top:12px">
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-header">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-sub">A selection of work across analytics, ML and computer vision.</p>
-      </div>
-
-      <!-- Data Analytics Projects -->
-      <div class="project-group">
-        <div class="project-group-title">Data Analytics & BI</div>
-        <div class="project-list">
-          <div class="project-card">
-            <div class="project-name">Sales Performance Dashboard</div>
-            <div class="project-meta">Power BI • DAX • Excel</div>
-            <p class="project-desc">
-              Designed an interactive Power BI dashboard to track monthly, quarterly and yearly sales.
-              Implemented KPIs for revenue, profit %, and YoY growth with drill-downs by region and product.
-            </p>
-            <div class="project-tags">
-              <span class="tag">Power BI</span>
-              <span class="tag">DAX</span>
-              <span class="tag">Sales analytics</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-name">IoT Sensor Analytics for Field Systems</div>
-            <div class="project-meta">Python • Excel • Power BI</div>
-            <p class="project-desc">
-              Analyzed sensor data from field systems to generate performance and anomaly reports.
-              Automated reporting workflows, significantly reducing manual effort.
-            </p>
-            <div class="project-tags">
-              <span class="tag">Python</span>
-              <span class="tag">Power BI</span>
-              <span class="tag">Reporting automation</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ML / AI Projects -->
-      <div class="project-group">
-        <div class="project-group-title">Machine Learning & AI</div>
-        <div class="project-list">
+          <!-- Customer Churn -->
           <div class="project-card">
             <div class="project-name">Customer Churn Prediction</div>
-            <div class="project-meta">Python • Scikit-Learn • SMOTE</div>
-            <p class="project-desc">
-              Built churn prediction models using Logistic Regression and Random Forest.
-              Performed EDA, feature engineering, and class balancing to reach ~87% accuracy and
-              identify key churn drivers.
-            </p>
-            <div class="project-tags">
-              <span class="tag">Classification</span>
-              <span class="tag">Random Forest</span>
-              <span class="tag">Churn analytics</span>
+            <div class="project-meta">ML • Classification • Scikit-learn</div>
+            <div class="project-desc">Churn prediction pipeline with EDA, feature engineering and production-ready model. Includes Colab notebook and live demo for recruiters.</div>
+            <div class="card-actions">
+              <a class="btn-pill" href="https://4b51a75b49cf6975b1.gradio.live" target="_blank">Live Demo</a>
+              <a class="btn-pill" href="https://colab.research.google.com/github/Malaiyarasan/customer-churn-prediction/blob/main/notebooks/customer%20churn%20prediction.ipynb" target="_blank">Open in Colab</a>
+              <a class="btn-pill" href="https://github.com/Malaiyarasan/customer-churn-prediction" target="_blank">GitHub</a>
             </div>
           </div>
 
+          <!-- AI Resume Screening -->
           <div class="project-card">
             <div class="project-name">AI Resume Screening System</div>
-            <div class="project-meta">Python • NLP • TF-IDF + Logistic Regression</div>
-            <p class="project-desc">
-              Created an AI-based resume shortlisting system to classify resumes into job-fit categories,
-              achieving ~92% accuracy using TF-IDF features and Logistic Regression.
-            </p>
-            <div class="project-tags">
-              <span class="tag">NLP</span>
-              <span class="tag">Classification</span>
-              <span class="tag">Recruitment AI</span>
+            <div class="project-meta">NLP • TF-IDF • Logistic Regression</div>
+            <div class="project-desc">A recruiter-assist tool that classifies resumes into job-fit categories using TF-IDF + Logistic Regression. Demo + dataset + notebook available.</div>
+            <div class="card-actions">
+              <a class="btn-pill" href="https://bc0655af6e7d532ec1.gradio.live" target="_blank">Live Demo</a>
+              <a class="btn-pill" href="https://colab.research.google.com/github/Malaiyarasan/ai-resume-screening-system/blob/main/notebooks/resume_screening.ipynb" target="_blank">Open in Colab</a>
+              <a class="btn-pill" href="https://github.com/Malaiyarasan/ai-resume-screening-system" target="_blank">GitHub</a>
             </div>
           </div>
 
+          <!-- Price Prediction -->
           <div class="project-card">
-            <div class="project-name">Price Prediction for E-commerce</div>
-            <div class="project-meta">Python • XGBoost • Regression</div>
-            <p class="project-desc">
-              Engineered 30+ features from product data and compared multiple regression models.
-              Achieved a low RMSE using a tuned Random Forest/XGBoost model.
-            </p>
-            <div class="project-tags">
-              <span class="tag">Regression</span>
-              <span class="tag">XGBoost</span>
-              <span class="tag">Feature engineering</span>
+            <div class="project-name">Price Prediction System</div>
+            <div class="project-meta">Regression • RandomForest • Gradio</div>
+            <div class="project-desc">Regression model to estimate product prices. Includes training notebook, saved model, and a live Gradio demo for interactive predictions.</div>
+            <div class="card-actions">
+              <a class="btn-pill" href="https://803a16f2a145630f00.gradio.live" target="_blank">Live Demo</a>
+              <a class="btn-pill" href="https://colab.research.google.com/github/Malaiyarasan/price-prediction-system/blob/main/notebooks/price_prediction.ipynb" target="_blank">Open in Colab</a>
+              <a class="btn-pill" href="https://github.com/Malaiyarasan/price-prediction-system" target="_blank">GitHub</a>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Computer Vision Projects -->
-      <div class="project-group">
-        <div class="project-group-title">Computer Vision</div>
-        <div class="project-list">
+          <!-- Crowd Management -->
+          <div class="project-card">
+            <div class="project-name">Crowd Management from Drone Footage</div>
+            <div class="project-meta">Computer Vision • CNN • Drone</div>
+            <div class="project-desc">A CNN-based crowd density classifier for drone footage (low / medium / high). Includes notebook and demo to test on sample video frames.</div>
+            <div class="card-actions">
+              <a class="btn-pill" href="https://cd67d1e1d508e42c76.gradio.live" target="_blank">Live Demo</a>
+              <a class="btn-pill" href="https://colab.research.google.com/github/Malaiyarasan/crowd-management-drone-vision/blob/main/notebooks/crowd_management_.ipynb" target="_blank">Open in Colab</a>
+              <a class="btn-pill" href="https://github.com/Malaiyarasan/crowd-management-drone-vision" target="_blank">GitHub</a>
+            </div>
+          </div>
+
+          <!-- Emotion Recognition -->
           <div class="project-card">
             <div class="project-name">Real-time Emotion Recognition</div>
-            <div class="project-meta">TensorFlow • CNN • OpenCV</div>
-            <p class="project-desc">
-              Developed a CNN-based facial emotion classifier trained on FER-style datasets and
-              deployed it for real-time inference using a webcam and OpenCV.
-            </p>
-            <div class="project-tags">
-              <span class="tag">CNN</span>
-              <span class="tag">Computer vision</span>
-              <span class="tag">Real-time</span>
+            <div class="project-meta">Computer Vision • CNN • OpenCV</div>
+            <div class="project-desc">Pretrained CNN for facial emotion recognition — live demo and Colab notebook included. Upload any real human face image to get emotion probabilities.</div>
+            <div class="card-actions">
+              <a class="btn-pill" href="https://a5abcf716057fcd866.gradio.live" target="_blank">Live Demo</a>
+              <a class="btn-pill" href="https://colab.research.google.com/github/Malaiyarasan/emotion-recognition-cnn/blob/main/notebooks/emotion_recognition.ipynb" target="_blank">Open in Colab</a>
+              <a class="btn-pill" href="https://github.com/Malaiyarasan/emotion-recognition-cnn" target="_blank">GitHub</a>
             </div>
           </div>
 
+          <!-- LipNet (Placeholder) -->
           <div class="project-card">
-            <div class="project-name">Lip Reading with LipNet</div>
-            <div class="project-meta">Deep Learning • CNN + LSTM</div>
-            <p class="project-desc">
-              Implemented a LipNet-style architecture for visual speech recognition,
-              processing video frames into sequences and mapping lip movements to text.
-            </p>
-            <div class="project-tags">
-              <span class="tag">LipNet</span>
-              <span class="tag">Sequence modeling</span>
-              <span class="tag">Deep learning</span>
+            <div class="project-name">LipNet — Visual Speech Recognition (WIP)</div>
+            <div class="project-meta">Deep Learning • Sequence Models • LipNet</div>
+            <div class="project-desc">Work-in-progress: full LipNet pipeline for converting silent lip movement to text & voice. Will add notebook, demo and APK shortly.</div>
+            <div class="card-actions">
+              <a class="btn-pill" href="#" onclick="alert('LipNet pending — will add demo when ready'); return false;">Pending</a>
+              <a class="btn-pill" href="https://github.com/Malaiyarasan/ai-robotics-cv-portfolio" target="_blank">Robotics Repo</a>
             </div>
           </div>
+
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="section-header">
-        <h2 class="section-title">Experience</h2>
-        <p class="section-sub">Where I’ve applied analytics and AI in practice.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="exp-item">
-          <div class="exp-top">
-            <div>
-              <div class="exp-role">Junior Research Associate – Data & AI</div>
-              <div class="exp-company">Kite Robotics, Chennai</div>
-            </div>
-            <div class="exp-period">Dec 2024 – Dec 2025</div>
-          </div>
-          <div class="exp-desc">
-            Worked with multi-sensor datasets to support analytics and AI model development
-            for intelligent systems.
-          </div>
-          <ul class="exp-bullets">
-            <li>Cleaned and merged large datasets for ML training and evaluation.</li>
-            <li>Built preprocessing pipelines and feature extraction scripts.</li>
-            <li>Developed dashboards to track KPIs and model performance.</li>
-          </ul>
+      <!-- EXPERIENCE (summary) -->
+      <section id="experience" style="margin-top:28px">
+        <h2 style="margin:0">Experience</h2>
+        <div style="margin-top:8px;font-size:13px;color:var(--muted)">
+          Junior Research Associate — Kite Robotics (Dec 2024 – Dec 2025) • IoT / Data Engineer — Oro Spears (Jul 2024 – Jan 2025)
         </div>
+      </section>
+    </main>
 
-        <div class="exp-item">
-          <div class="exp-top">
-            <div>
-              <div class="exp-role">IoT / Data Engineer</div>
-              <div class="exp-company">Oro Spears Technology Solutions Pvt Ltd</div>
-            </div>
-            <div class="exp-period">Jul 2024 – Jan 2025</div>
-          </div>
-          <div class="exp-desc">
-            Focused on data integration and reporting for field sensor systems.
-          </div>
-          <ul class="exp-bullets">
-            <li>Analyzed sensor data and generated performance reports.</li>
-            <li>Created dashboards for real-time monitoring and decision support.</li>
-            <li>Automated daily reporting workflows using Python and BI tools.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-header">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-sub">The easiest ways to reach me.</p>
-      </div>
-
-      <div class="contact-card">
-        <div class="contact-main">
-          <p>
-            If you’re hiring for roles in analytics, machine learning, or applied computer vision,
-            I’d be happy to connect.
-          </p>
-          <p>
-            I’m open to opportunities in India and internationally,
-            especially where I can work on data-rich products and AI-powered systems.
-          </p>
-        </div>
-        <div class="contact-actions">
-          <a class="contact-link" href="mailto:msmalai1007@gmail.com">
-            <div>
-              <strong>Email</strong>
-              <span>Primary contact</span>
-            </div>
-            <span>↗</span>
-          </a>
-          <a class="contact-link" href="https://github.com/Malaiyarasan" target="_blank">
-            <div>
-              <strong>GitHub</strong>
-              <span>Code & projects</span>
-            </div>
-            <span>↗</span>
-          </a>
-          <a class="contact-link" href="#" onclick="alert('Add your LinkedIn URL in the HTML when ready.'); return false;">
-            <div>
-              <strong>LinkedIn</strong>
-              <span>Professional profile</span>
-            </div>
-            <span>↗</span>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <span>© <span id="year"></span> · Malaiyarasan M</span>
-    <span>AI & Data Engineer · Portfolio A</span>
-  </footer>
+    <footer>
+      <div>© <span id="year"></span> · Malaiyarasan M</div>
+      <div>AI & Data Engineer — Portfolio A</div>
+    </footer>
+  </div>
 
   <script>
-    // Set year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
